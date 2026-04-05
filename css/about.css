@@ -1,0 +1,230 @@
+/* ===== ABOUT PAGE SPECIFIC STYLES ===== */
+
+/* Title Section */
+.about-title-section {
+    padding: 6rem 0 4rem;
+    text-align: center;
+}
+
+.about-title {
+    position: relative;
+    display: inline-block;
+    padding-bottom: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.about-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 3px;
+    background: linear-gradient(90deg, var(--primary-green), var(--primary-teal));
+    border-radius: 2px;
+}
+
+.title-tagline {
+    font-size: 1.3rem;
+    color: #666;
+    max-width: 600px;
+    margin: 0 auto 3rem;
+    line-height: 1.6;
+}
+
+/* Developer Container */
+.developer-container {
+    max-width: 800px;
+    margin: 0 auto 6rem;
+    text-align: center;
+    padding: 3rem;
+    background: linear-gradient(135deg, rgba(199, 232, 243, 0.1) 0%, rgba(255, 255, 255, 0.1) 100%);
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+.developer-image {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid var(--primary-blue);
+    margin-bottom: 2rem;
+    box-shadow: var(--shadow);
+}
+
+.developer-info h3 {
+    color: var(--primary-green);
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.developer-role {
+    color: var(--primary-teal);
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+}
+
+.developer-description {
+    color: #555;
+    font-size: 1.1rem;
+    line-height: 1.7;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Two Column Layout */
+.story-mission-section {
+    padding: 4rem 0 6rem;
+}
+
+.columns-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.columns-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(to bottom, 
+        rgba(2, 128, 144, 0.1) 0%, 
+        var(--primary-teal) 20%, 
+        var(--primary-teal) 80%, 
+        rgba(2, 128, 144, 0.1) 100%);
+}
+
+.column {
+    padding: 0 1rem;
+}
+
+.column-icon {
+    font-size: 3rem;
+    color: var(--primary-teal);
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.column h3 {
+    color: var(--primary-green);
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    position: relative;
+    text-align: center;
+}
+
+.column h3::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50px;
+    height: 2px;
+    background-color: var(--primary-teal);
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.column-content {
+    color: #555;
+    font-size: 1.1rem;
+    line-height: 1.7;
+}
+
+.column-content p {
+    margin-bottom: 1.5rem;
+}
+
+/* Responsive Design for About Page */
+@media (max-width: 992px) {
+    .columns-container {
+        gap: 4rem;
+    }
+    
+    .developer-container {
+        padding: 2rem;
+        margin-bottom: 4rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .columns-container {
+        grid-template-columns: 1fr;
+        gap: 4rem;
+    }
+    
+    .columns-container::before {
+        display: none;
+    }
+    
+    .column {
+        padding: 0;
+    }
+    
+    .developer-image {
+        width: 150px;
+        height: 150px;
+    }
+    
+    .about-title-section {
+        padding: 5rem 0 3rem;
+    }
+    
+    .story-mission-section {
+        padding: 3rem 0 5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .developer-container {
+        padding: 1.5rem;
+    }
+    
+    .developer-image {
+        width: 120px;
+        height: 120px;
+    }
+    
+    .developer-info h3 {
+        font-size: 1.6rem;
+    }
+    
+    .column h3 {
+        font-size: 1.6rem;
+    }
+    
+    .column-icon {
+        font-size: 2.5rem;
+    }
+}
+
+/* Animation Effects */
+.developer-image {
+    transition: transform 0.5s ease;
+}
+
+.developer-image:hover {
+    transform: scale(1.05);
+}
+
+.column {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.column.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
